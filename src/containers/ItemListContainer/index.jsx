@@ -1,17 +1,26 @@
-import { ItemCountComponent } from './../../components/ItemCountComponent/index';
+import { useEffect, useState } from 'react';
+import { getData } from '../../utils/getData';
+import { ItemListComponent } from '../../components/ItemListComponent';
 
 export const ItemListContainer = ({greeting}) => {
 
-    const onAdd = (cantidad) => {
-        alert(`se agregaron ${cantidad} items del producto`);
+    const [productos, setProductos] = useState([]);
+    
+    useEffect(() => {
+        const waitForData = async () => {
+            let data = await getData();
+            setProductos(data);
+        }
+        
+        waitForData();
+    }, []);
+
+
+    if (productos.length > 0) {
+        console.log(productos);
     }
 
     return(
-        <>
-        <div style={{color: 'blue'}}>
-            <p>{greeting}</p>
-        </div>
-        <ItemCountComponent stock={5} initial={1} onAdd={onAdd} />
-        </>
+        <ItemListComponent items={productos} />
     )
 }
