@@ -7,13 +7,15 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 
 import { NavbarComponent } from './components/NavbarComponent/NavbarComponent';
 import { ItemListContainer } from './containers/ItemListContainer';
+import { ItemDetailContainer } from './containers/ItemDetailContainer';
 
 
 function App() {
   return (
     <>
       <NavbarComponent />
-      <ItemListContainer greeting="Holaaaaa" />
+      {/*<ItemListContainer greeting="Holaaaaa" />*/}
+      <ItemDetailContainer />
     </>
   );
 }
