@@ -1,9 +1,10 @@
+import { Link } from 'react-router-dom';
 import { CardWidgetComponent } from "../CardWidgetComponent"
 
 export const NavbarComponent = () => {
 
     return (
-        <nav className="navbar navbar-expand-sm navbar-light bg-light">
+        <nav className="navbar navbar-expand-sm navbar-light bg-dark">
             <div className="container-fluid">
                 <CardWidgetComponent />
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarStore" aria-controls="navbarStore" aria-expanded="true" aria-label="Toggle navigation">
@@ -16,11 +17,9 @@ export const NavbarComponent = () => {
                                 Todas las Categorías
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a className="dropdown-item">Tecnología</a></li>
-                                <li><a className="dropdown-item">Hogar</a></li>
-                                <li><a className="dropdown-item">Moda</a></li>
-                                <li><a className="dropdown-item">Propiedades</a></li>
-                                <li><a className="dropdown-item">Vehículos</a></li>
+                                <li><Link to={'/category/tecnologia'} className="dropdown-item">Tecnología</Link></li>
+                                <li><Link to={'/category/deportes'} className="dropdown-item">Deportes</Link></li>
+                                <li><Link to={'/category/vehiculos'} className="dropdown-item">Vehículos</Link></li>
                             </ul>
                         </li>
                         <li className="nav-item">
@@ -33,10 +32,7 @@ export const NavbarComponent = () => {
                             <a className="nav-link">Vender</a>
                         </li>
                     </ul>
-                    <form className="d-flex">
-                        <input className="form-control me-2" type="search" placeholder="Buscar productos.." aria-label="Search" />
-                        <button className="btn btn-outline-success">Buscar</button>
-                    </form>
+                    <img src={process.env.PUBLIC_URL + '/images/cart.png'} alt="" width="50" height="50" />
                 </div>
             </div>
         </nav>

@@ -14,7 +14,7 @@ export const ItemCountComponent = ({stock, initial, onAdd}) => {
                 <input type="text" className="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" readOnly value={count} />
                 <button className="btn btn-outline-secondary" type="button" id="button-addon2" disabled={count === stock} onClick={() => { setCount(count + 1) }}>+</button>
             </div>
-            <button type="button" className="btn btn-outline-primary" disabled={stock === 0 || count === 0} onClick={() => {onAdd(count)}}>Agregar al carrito</button>
+            <button type="button" className="btn btn-primary" disabled={stock === 0 || count === 0} onClick={() => {onAdd(count)}}>Agregar al carrito</button>
         </div>
         </>
     )

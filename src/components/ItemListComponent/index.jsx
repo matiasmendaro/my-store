@@ -1,7 +1,9 @@
 
+import { useParams } from 'react-router-dom';
 import { ItemComponent } from './../ItemComponent/index';
-export const ItemListComponent = ({items}) => {
 
+export const ItemListComponent = ({items}) => {
+    const id = useParams();
     return(
         <div className="container py-5">
         
