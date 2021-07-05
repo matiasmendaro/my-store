@@ -6,7 +6,7 @@ También se puede visualizar el detalle de un producto específico, para ver inf
 
 
 
-## Construido con 🛠️
+## Construido con
 
 Creado con la librería [React](https://es.reactjs.org/)
 
