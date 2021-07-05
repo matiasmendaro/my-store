@@ -12,7 +12,7 @@ export const ItemListContainer = ({greeting}) => {
     useEffect(() => {
         const waitForData = async () => {
             let data = await getData();
-            let productsFiltered = id !== undefined ? data.filter(x => x.category === id) : data;
+            let productsFiltered = id ? data.filter(x => x.category === id) : data;
             setProductos(productsFiltered);
         }
         
