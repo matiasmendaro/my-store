@@ -8,17 +8,17 @@ También se puede visualizar el detalle de un producto específico, para ver inf
 
 ## Construido con 🛠️
 
-Creado con la librería React
+Creado con la librería [React](https://es.reactjs.org/)
 
 
 ## Dependencias Extra
 
-Se utiliza la dependencia de Bootstrap 5 por npm, para la apariencia del sitio. 
+Se utiliza la dependencia npm de [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/), para la apariencia del sitio. 
 
 
 ## Ideas o Enfoque
 
-La arquitectura de la aplicacion esta dividida en Componentes Contenedores y Componentes de Presentación. 
+Los componentes de la aplicacion estan divididos en Componentes Contenedores y Componentes de Presentación. 
 Los Componentes Contenedores se encargan de realizar solicitudes de datos y de la lógica, retornando Componentes de Presentacion, los cuales se encargan específicamente de mostrar datos.
 Para realizar la solicitud de datos, utilicé fetch con async/await, apuntando a un método con un setTimeout para simular una demora de 2 segundos en la respuesta, como si se tratara de una api real, que devuelve un array de objetos de productos.
 Mientras se traen los products se visualiza un loader, para indicar que los productos se mostrarán a la brevedad.  
