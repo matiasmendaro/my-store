@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getData } from '../../utils/getData';
 import { ItemListComponent } from '../../components/ItemListComponent';
+import { LoaderComponent } from './../../components/LoaderComponent';
 import { useParams } from 'react-router-dom';
 
 export const ItemListContainer = ({greeting}) => {
@@ -11,19 +12,17 @@ export const ItemListContainer = ({greeting}) => {
     useEffect(() => {
         const waitForData = async () => {
             let data = await getData();
-            let productsFiltered = data.filter(x => x.category === id);
+            let productsFiltered = id !== undefined ? data.filter(x => x.category === id) : data;
             setProductos(productsFiltered);
         }
         
         waitForData();
     }, [id]);
 
-
-    if (productos.length > 0) {
-        console.log(productos);
-    }
-
+    
     return(
-        <ItemListComponent items={productos} />
+        <>
+        {productos.length > 0 ? <ItemListComponent items={productos} /> : <LoaderComponent/> }
+        </>
     )
 }

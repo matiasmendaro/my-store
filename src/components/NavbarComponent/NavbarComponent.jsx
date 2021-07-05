@@ -13,7 +13,7 @@ export const NavbarComponent = () => {
                 <div className="collapse navbar-collapse" id="navbarStore">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                            <a className="nav-link dropdown-toggle text-light" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
                                 Todas las Categorías
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -23,13 +23,13 @@ export const NavbarComponent = () => {
                             </ul>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link">Ofertas</a>
+                            <a className="nav-link text-light">Ofertas</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link">Favoritos</a>
+                            <a className="nav-link text-light">Favoritos</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link">Vender</a>
+                            <a className="nav-link text-light">Vender</a>
                         </li>
                     </ul>
                     <img src={process.env.PUBLIC_URL + '/images/cart.png'} alt="" width="50" height="50" />
