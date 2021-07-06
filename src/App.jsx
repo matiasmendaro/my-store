@@ -10,6 +10,7 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 import { NavbarComponent } from './components/NavbarComponent/NavbarComponent';
 import { ItemListContainer } from './containers/ItemListContainer';
 import { ItemDetailContainer } from './containers/ItemDetailContainer';
+import { CheckoutContainer } from './containers/CheckoutContainer/index';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route exact path="/" component={ItemListContainer} />
           <Route exact path="/category/:id" component={ItemListContainer} />
           <Route exact path="/item/:id" component={ItemDetailContainer} />
+          <Route exact path="/cart" component={CheckoutContainer} />
 
           <Route path="*" component={() => <h1>404 Not Found</h1>} />
         </Switch>
