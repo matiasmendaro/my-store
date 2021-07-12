@@ -33,6 +33,14 @@ export const CartComponentContext = ({children}) => {
         return cart.findIndex(itemCart => itemCart.item.id === id);
     }
 
+    const stockInCart = (id) => {
+        const itemFound = cart.find(itemCart => itemCart.item.id === id);
+        if (itemFound)
+            return itemFound.quantity;
+        else
+            return 0;
+    }
+
     const removeItem = (itemId) => {
     }
 
@@ -45,7 +53,7 @@ export const CartComponentContext = ({children}) => {
     });
 
     return(
-        <CartContext.Provider value={{addItem}}>
+        <CartContext.Provider value={{addItem, stockInCart}}>
             {children}
         </CartContext.Provider>
     )

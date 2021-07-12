@@ -5,7 +5,7 @@ import { CartContext } from './../../context/CartContext';
 
 export const ItemDetailComponent = ({item}) => {
     const [cartQuantity, setCartQuantity] = useState(0);
-    const { addItem } = useContext(CartContext);
+    const { addItem, stockInCart } = useContext(CartContext);
 
     const onAdd = (cantidad) => {
         //alert(`se agregaron ${cantidad} items del producto`);
@@ -28,7 +28,7 @@ export const ItemDetailComponent = ({item}) => {
                             <p className="card-text">{item.description}</p>
                             <p className="card-text"><small className="text-muted">$ {item.price}</small></p>
                             <br />
-                            {cartQuantity === 0 ? <ItemCountComponent stock={5} initial={1} onAdd={onAdd} /> : <Link to={"/cart"}><button type="button" className="btn btn-success">Termina tu compra</button> </Link>}
+                            {cartQuantity === 0 ? <ItemCountComponent stock={5 - stockInCart(item.id)} initial={1} onAdd={onAdd} /> : <Link to={"/cart"}><button type="button" className="btn btn-success">Termina tu compra</button> </Link>}
                         </div>
                     </div>
                 </div>
