@@ -1,7 +1,12 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CardWidgetComponent } from "../CardWidgetComponent"
+import { CartWidgetComponent } from '../CartWidgetComponent';
+import { CartContext } from './../../context/CartContext';
 
 export const NavbarComponent = () => {
+
+    const { cart } = useContext(CartContext);
 
     return (
         <nav className="navbar navbar-expand-sm navbar-light bg-dark">
@@ -32,7 +37,7 @@ export const NavbarComponent = () => {
                             <a className="nav-link text-light">Vender</a>
                         </li>
                     </ul>
-                    <img src={process.env.PUBLIC_URL + '/images/cart.png'} alt="" width="50" height="50" />
+                    {cart.length > 0 && <CartWidgetComponent />}
                 </div>
             </div>
         </nav>
