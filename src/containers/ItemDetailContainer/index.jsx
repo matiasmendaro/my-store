@@ -3,6 +3,7 @@ import { getData } from '../../utils/getData';
 import { ItemDetailComponent } from '../../components/ItemDetailComponent';
 import { LoaderComponent } from './../../components/LoaderComponent';
 import { useParams, useLocation } from 'react-router-dom';
+import { getFirestore } from '../../firebase/client';
 
 export const ItemDetailContainer = () => {
 
@@ -12,13 +13,16 @@ export const ItemDetailContainer = () => {
     console.log(location.pathname);
     
     useEffect(() => {
-        const waitForData = async () => {
-            let data = await getData();
-            let productFiltered = data.find(x => x.id === parseInt(id));
-            setItemDetail(productFiltered);
+        const getProduct = async () => {
+            const DB = getFirestore();
+            const CollectionProductos = DB.collection("productos");
+            const RESPONSE = await CollectionProductos.doc(id).get();
+            const data = { ...RESPONSE.data(), id: RESPONSE.id };
+            console.log(data);
+            setItemDetail(data);
         }
-        
-        waitForData();
+
+        getProduct();
     }, [id]);
     
 
