@@ -1,11 +1,11 @@
-import { useContext } from "react"
+import { useContext, useState, useEffect } from "react"
 import { CartContext } from './../../context/CartContext';
 import { Link } from 'react-router-dom';
 
 
 export const CheckoutContainer = () => {
 
-    const { cart, removeItem, totalPrice } = useContext(CartContext);
+    const { cart, removeItem, totalPrice, clearCart, order, setOrder, createOrder } = useContext(CartContext);
 
     if (cart.length == 0) {
         return (
@@ -48,11 +48,27 @@ export const CheckoutContainer = () => {
                     <tr>
                         <th>Precio Total</th>
                         <th></th>
-                        <th></th>
                         <th>$ {totalPrice.toFixed(2)}</th>
+                        <th><button type="button" className="btn btn-danger" onClick={() => {clearCart()}}>Eliminar Todo</button></th>
                     </tr>
                 </tfoot>
             </table>
+
+            <div className="row">
+                <div className="col">
+                    <input type="text" className="form-control" placeholder="name" onInput={(e) => {setOrder({...order, name: e.target.value})}} />
+                </div>
+                <div className="col">
+                    <input type="phone" className="form-control" placeholder="phone" onInput={(e) => {setOrder({...order, phone: e.target.value})}} />
+                </div>
+                <div className="col">
+                    <input type="email" className="form-control" placeholder="email" onInput={(e) => {setOrder({...order, email: e.target.value})}} />
+                </div>
+                <div className="col">
+                    <button type="button" className="btn btn-success" onClick={() => {createOrder()}}>Comprar</button>
+                </div>
+            </div>
+           
         </div>
     )
 }
