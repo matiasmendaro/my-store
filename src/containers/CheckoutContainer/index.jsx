@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect } from "react"
 import { CartContext } from './../../context/CartContext';
 import { Link } from 'react-router-dom';
+import { HeaderComponent } from './../../components/HeaderComponent/index';
 
 
 export const CheckoutContainer = () => {
@@ -18,6 +19,7 @@ export const CheckoutContainer = () => {
 
     return(
         <div className="container py-5">
+            <HeaderComponent />
             <table className="table">
                 <thead>
                     <tr>

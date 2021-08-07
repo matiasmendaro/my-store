@@ -2,15 +2,13 @@ import { useEffect, useState } from 'react';
 import { getData } from '../../utils/getData';
 import { ItemDetailComponent } from '../../components/ItemDetailComponent';
 import { LoaderComponent } from './../../components/LoaderComponent';
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { getFirestore } from '../../firebase/client';
 
 export const ItemDetailContainer = () => {
 
     const [itemDetail, setItemDetail] = useState({});
     const { id } = useParams();
-    const location = useLocation();
-    console.log(location.pathname);
     
     useEffect(() => {
         const getProduct = async () => {

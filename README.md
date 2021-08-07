@@ -13,7 +13,7 @@ Creado con la librería [React](https://es.reactjs.org/)
 
 ## Dependencias Extra
 
-Se utiliza la dependencia npm de [Bootstrap 5](https://www.npmjs.com/package/bootstrap), para la apariencia del sitio. 
+Se utiliza la dependencia npm de [Bootstrap 5] (https://www.npmjs.com/package/bootstrap) y [bootstrap-icons] (https://icons.getbootstrap.com/) para la apariencia del sitio. 
 
 
 ## Ideas o Enfoque

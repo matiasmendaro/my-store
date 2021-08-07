@@ -74,7 +74,7 @@ export const CartComponentContext = ({children}) => {
     
         const db = getFirestore();
         db.collection('orders').add(orderData).then(({id}) => {
-            console.log(`Order created => ${id}`);
+            alert(`Order created => ${id}`);
 
             let batch = db.batch();
 
